@@ -203,8 +203,11 @@ app.configure('development', function () {
 * -------------------------------------------------------------------------------------------------
 * include a route file for each major area of functionality in the site
 **/
-require('./routes/home')(app);
-require('./routes/account')(app);
+//require('./routes/home')(app);
+//require('./routes/account')(app);
+app.get("/", function(req, res){
+    res.sendfile(path.join(__dirname + "/views/index.html"));
+})
 
 
 var server = http.createServer(app);

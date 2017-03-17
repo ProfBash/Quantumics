@@ -1,8 +1,9 @@
 module.exports = function (app) {
-
-    // home page
+    
+    var path = require("path");
     app.get('/', function (req, res) {
-        res.render('index', { title: 'Home Page.  ' })
+        res.sendFile(path.join(__dirname + "./../views/index.html"))
+        //res.render('index', { title: 'Home Page.  ' })
     });
 
     // chat area
